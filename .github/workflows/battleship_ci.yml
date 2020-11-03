@@ -12,5 +12,14 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+          
+      - name: Generate JacocoReport
+        run: ./gradlew check
+      - uses: codecov/codecov-action@v1
+        with:
+          file: ./build/reports/jacocoxml.xml # optional
+          name: codecoverability
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false):  
       - name: Build with Gradle
         run: ./gradlew build
