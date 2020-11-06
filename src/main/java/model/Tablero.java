@@ -133,12 +133,12 @@ public class Tablero implements Subject {
 
     this.turnoMaquina();
 
-    if (terminoPartida()) {
+    /*if (terminoPartida()) {
       Jugador jugador = this.encontrarGanador();
       System.out.println("GANO: " + jugador.getNombre());
       notifyObservers(new Evento(Evento.TERMINO_PARTIDA, jugador.getPlayerID()));
       return;
-    }
+    }*/
   }
 
   /**

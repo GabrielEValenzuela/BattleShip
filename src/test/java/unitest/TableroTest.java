@@ -1,10 +1,6 @@
 package unitest;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import model.Barco;
 import model.Jugador;
@@ -13,6 +9,8 @@ import model.Tablero;
 import view.Observer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.*;
 
 
 class TableroTest {
@@ -50,7 +48,12 @@ class TableroTest {
 
   @Test
   void testDispararEventoEnGrilla() {
-    // fail("Not yet implemented");
+    int click = 1;
+    int[][] grilla;
+    tablero.dispararEventoEnGrilla(click,0,0,0);
+    grilla = tablero.getGrillaJugador0();
+    assertTrue(grilla[0][0] == tablero.BARCO);
+
   }
 
   @Test
@@ -64,6 +67,7 @@ class TableroTest {
     
   }
 
+  @Test
   void testConstructorTablero() {
     
     assertTrue("No se inicializaron los turnos en 0", tablero.getTurno() == 0);
@@ -188,5 +192,25 @@ class TableroTest {
     
     assertTrue("Deberia ganar el jugador 0", tablero.encontrarGanador().getNombre() 
         == tablero.getJugador0().getNombre());
+  }
+
+  @Test
+  /**
+   * Testea que al resetear el tablero todo se resete de forma correcta
+   */
+  public void testResetearJuego(){
+    for(int i = 0; i < tablero.getGrillaJugador0().length; i++){
+      tablero.dispararEventoEnGrilla(1,0,i,0);
+    }
+    int[][] grilla = tablero.getGrillaJugador0();
+    assertTrue(grilla[0][0]==tablero.BARCO);
+    tablero.resetearJuego();
+    grilla = tablero.getGrillaJugador0();
+    for(int i = 0; i < grilla.length; i++){
+      for(int j = 0; j < grilla.length; j++){
+        assertEquals(tablero.AGUA, grilla[i][j]);
+      }
+    }
+    assertEquals(0,tablero.getTurno());
   }
 }
