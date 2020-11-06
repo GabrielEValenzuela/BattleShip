@@ -95,5 +95,23 @@ public class EstadisticasView implements Observer {
 
     }
   }
+  public int get_barcosColocadosJug1() {
+	  return barcosColocadosJug1 ;
+  }
+  public int get_barcosColocadosJug0() {
+	  return barcosColocadosJug0 ;
+  }
+  public int get_disparosRealizadosJug0() {
+	  return disparosRealizadosJug0 ;
+  }
+  public int get_disparosRealizadosJug1() {
+	  return disparosRealizadosJug1 ;
+  }
+  public int get_barcosDestruidosJug0() {
+	  return barcosDestruidosJug0 ;
+  }
+  public int get_barcosDestruidosJug1() {
+	  return barcosDestruidosJug1 ;
+  }
   
 }
