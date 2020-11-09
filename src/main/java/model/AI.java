@@ -171,7 +171,7 @@ public class AI extends Humano {
     return puntajeAcum;
   }
 
-  // Tiene en cuenta el tamanioo del barco vivo mas chico y cuantas
+  // Tiene en cuenta el tamaño del barco vivo mas chico y cuantas
   // casillas rectas vacias tiene
   private int otroAnalisisMas(int[][] grilla0, int fila, int columna) {
     int minimo = this.sizeMenorBarcoVivo();

@@ -32,7 +32,7 @@ public class MensajeHelp extends JOptionPane {
         + "de forma horizontal hacia la derecha.\n" + "\nEtapa de juego 1vs1\n\n"
         + "Se utiliza cualquier click para especificar la casilla a la cual se\n"
         + "desea disparar,el objetivo del juego es hundir todos los barcos\n"
-        + "enemigos antes que Ã©l hunda los tuyos.\n" + "\nSi una vez ubicados los"
+        + "enemigos antes que él hunda los tuyos.\n" + "\nSi una vez ubicados los"
             + " barcos, derea reiniciar el juego\n"
         + "solo presione el boton ubicado en la zona central de la pantalla";
   }

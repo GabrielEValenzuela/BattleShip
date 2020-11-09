@@ -219,7 +219,7 @@ public class Display extends JFrame implements Observer {
 
   private void crearBotonHelp() {
     this.botonHelp = new JButton(Display.help);
-    this.botonHelp.setToolTipText("Â¿Necesitas ayuda?");
+    this.botonHelp.setToolTipText("¿Necesitas ayuda?");
     botonHelp.setPreferredSize(new Dimension(48, 48));
     JPanel botonPanel = new JPanel();
     botonPanel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));

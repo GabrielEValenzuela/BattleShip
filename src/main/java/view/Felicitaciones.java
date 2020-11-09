@@ -46,10 +46,6 @@ public class Felicitaciones extends JFrame implements Observer {
     this.setLocationRelativeTo(null);
     this.setVisible(true);
   }
-  
-  public JLabel getMensaje() {
-	  return mensaje ;
-  }
 
   /**
    * Recibe updates del tablero.
