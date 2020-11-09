@@ -16,9 +16,14 @@ class EstadisticasTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		try{
 		tablero = new Tablero() ;
 		display = new Display(tablero) ;
 		estadisticas = new EstadisticasView(display) ;	
+		}
+		catch (Exception HeadlessException){
+            assertTrue(true);
+        }
 	}
 
 	@Test
