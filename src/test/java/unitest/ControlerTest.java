@@ -24,9 +24,14 @@ class ControlerTest {
      * Setea todo lo necesario para los otros tests
      */
     public void beforeTestControler(){
+        try{
         tablero = new Tablero();
         display = new Display(tablero);
         controler = new Controler(tablero,display);
+        }
+        catch (Exception HeadlessException){
+            assertTrue(true);
+        }
     }
 
     @Test
