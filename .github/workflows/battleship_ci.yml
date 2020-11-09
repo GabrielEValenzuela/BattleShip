@@ -13,8 +13,8 @@ jobs:
         with:
           java-version: 11
           
-      - name: Generate JacocoReport
-        run: ./gradlew check
+      - name: Generate reports
+        run: ./gradlew jacocoTestReport
       - uses: codecov/codecov-action@v1
         with:
           file: ./build/reports/jacocoxml.xml # optional
