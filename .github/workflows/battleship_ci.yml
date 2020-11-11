@@ -12,27 +12,16 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11    
-      - uses: actions/github-script@v2
-        id: check_build
-        with:
-          script: |
-            const { owner, repo } = context.repo
-            chmod +x build_test_script.pl
+      - name: check_build
+        run: |
+          chmod +x build_test_script.pl
             flag = build_test_script.pl
-            if (flag == -1) {
-              console.log('Cancelling ...');
-              const run_id = "${{ github.run_id }}";
-              await github.actions.cancelWorkflowRun({ owner, repo, run_id });
-              return 'stop'
-            } else {
-              return 'build'
-            }
-          result-encoding: string
-      - name: Waiting for cancellation
-        run: sleep 60
-        if: steps.check.outputs.result == 'stop'
-      - name: Should build?
-        run: test "${{ steps.check.outputs.result }}" = "build"
+            if [[flag -eq -1]]
+            then
+              echo "No building"
+            else
+              echo "Building"
+            fi
       - name: Generate reports
         run: ./gradlew jacocoTestReport
       - uses: codecov/codecov-action@v1
