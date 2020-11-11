@@ -1,0 +1,6 @@
+coverage: 88%
+pmd: 321
+checkstyle: 310
+previous_coverage: 70%
+previous_pmd: 330
+previous_checkstyle: 330
