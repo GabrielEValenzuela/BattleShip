@@ -14,13 +14,13 @@ jobs:
           java-version: 11    
       - name: check_build
         run: |
-          chmod +x build_test_script.pl
-            flag = build_test_script.pl
-            if [[flag -eq -1]]
+            chmod +x ./build_test_script.pl
+            flag_build=$(./build_test_script.pl)
+            if [ $flag_build -eq -1 ]
             then
-              echo "No building"
+                    exit -1
             else
-              echo "Building"
+                    exit 0
             fi
       - name: Generate reports
         run: ./gradlew jacocoTestReport
