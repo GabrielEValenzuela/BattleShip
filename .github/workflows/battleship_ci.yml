@@ -17,8 +17,8 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo
-            chmod +x ./build_test_script.pl
-            flag = ./build_test_script.pl
+            chmod +x build_test_script.pl
+            flag = build_test_script.pl
             if (flag == -1) {
               console.log('Cancelling ...');
               const run_id = "${{ github.run_id }}";
